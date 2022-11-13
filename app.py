@@ -8,16 +8,16 @@ from models.workout import Workout
 
 app = Flask(__name__)
 
-from controllers.workout_controller import books_blueprint
+# from controllers.workout_controller import books_blueprint
 
-app.register_blueprint(books_blueprint)
+# app.register_blueprint(workout_blueprint)
 
 
 
 @app.route('/')
 def home():
-    workouts = workout_repository.select_all()
-    return render_template('index.html', workouts = workouts)
+    # workouts = workout_repository.select_all()
+    return render_template('index.html')
 
 
 
