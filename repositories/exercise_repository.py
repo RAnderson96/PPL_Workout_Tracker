@@ -1,7 +1,7 @@
 from db.run_sql import run_sql
 import pdb
 from models.exercise import Exercise
-from models.workout import Workout
+from models.workout import Workout_list
 from models.legs import Leg
 from models.pull import Pull
 from models.push import Push
@@ -34,7 +34,7 @@ def select_specific_workout_num(workout_group, workout_varient):
     values = [workout_group, workout_varient]
     results = run_sql(sql, values)
     return results[0]['min']
-    
+
    
 
     

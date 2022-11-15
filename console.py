@@ -1,6 +1,6 @@
 from models.exercise import Exercise
 from models.user import User
-from models.workout import Workout
+from models.workout import Workout_list
 # import repositories.exercise_repository as exercise_repository
 # import repositories.user_repository as user_repository
 # import repositories.workout_repository as workout_repository

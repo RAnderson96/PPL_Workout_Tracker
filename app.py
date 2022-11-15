@@ -3,7 +3,7 @@ from repositories import exercise_repository, user_repository, workout_repositor
 from flask import Flask, render_template, request, redirect
 from models.exercise import Exercise
 from models.user import User
-from models.workout import Workout
+from models.workout import Workout_list
 
 
 app = Flask(__name__)

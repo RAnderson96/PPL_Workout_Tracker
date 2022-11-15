@@ -1,8 +1,6 @@
-class Workout:
-    def __init__(self, workout_name, workout, id = None):
-
-        self.workout_name = workout_name
-        self.workout = workout
+class Workout_list:
+    def __init__(self, workout_list, id = None):
+        self.workout_list = workout_list
         self.id = id
 
 
