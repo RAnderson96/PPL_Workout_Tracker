@@ -94,9 +94,17 @@ CREATE TABLE pulls_b (
 
 CREATE TABLE workouts (
     id SERIAL PRIMARY KEY,
-    workout_group INT,
+    workout_name VARCHAR(255),
     workout_num INT
-
 );
+
+
+
+-- class Workout:
+--     def __init__(self, workout_name, workout, id = None):
+
+--         self.workout_name = workout_name
+--         self.workout = workout
+--         self.id = id
 
 

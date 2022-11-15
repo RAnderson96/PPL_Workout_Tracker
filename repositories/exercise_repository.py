@@ -1,5 +1,5 @@
 from db.run_sql import run_sql
-
+import pdb
 from models.exercise import Exercise
 from models.workout import Workout
 from models.legs import Leg
@@ -14,6 +14,31 @@ def save(exercise):
     id = results[0]['id']
     exercise.id = id
     return  exercise
+
+
+
+def select_specific_workout(workout_group, workout_num, workout_varient):
+    workout = []
+    sql = "SELECT * FROM exercises WHERE workout_group = %s AND workout_num = %s AND workout_varient = %s"
+    values = [workout_group, workout_num, workout_varient]
+    results = run_sql(sql, values)
+    for row in results:
+        exercise = Exercise(row['exercise_name'], row['num_sets'], row['num_reps'], row['weights'], row['workout_group'], row['workout_num'], row['workout_varient'], row['id'])
+        workout.append(exercise)
+    return workout
+
+
+def select_specific_workout_num(workout_group, workout_varient):
+    
+    sql = "SELECT MIN(workout_num) FROM exercises WHERE workout_group = %s AND workout_varient = %s"
+    values = [workout_group, workout_varient]
+    results = run_sql(sql, values)
+    return results[0]['min']
+    
+   
+
+    
+
 
 
 def save_pushes_a(exercise):

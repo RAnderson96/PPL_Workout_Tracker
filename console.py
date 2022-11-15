@@ -25,15 +25,6 @@ for exercise in workout_1_push_a_list:
     exercise_repository.save_pushes_a(exercise)
     
 
-
-
-
-# exercise_repository.transfer_exercises('pushes_a', 'Push', 'A')
-
-
-# workout_1_push_a = Workout(workout_1_push_a_list, user_1)
-
-
 exercise_7 = Exercise("Deadlift", 1, 5, 100, "Pull", 2, "A")
 exercise_8 = Exercise("Pulldowns", 3, 8, 65, "Pull", 2, "A")
 exercise_9 = Exercise("Chest Supported Rows", 3, 8, 75, "Pull", 2, "A")
@@ -46,9 +37,6 @@ workout_2_pull_a_list = [exercise_7, exercise_8, exercise_9, exercise_10, exerci
 for exercise in workout_2_pull_a_list:
     exercise_repository.save(exercise)
     exercise_repository.save_pulls_a(exercise)
-
-# workout_2_pull_a = Workout(workout_2_pull_a_list, user_1)
-
 
 
 exercise_13 = Exercise("Squats", 5, 5, 65, "Legs", 3)
@@ -76,9 +64,6 @@ for exercise in workout_4_push_b_list:
     exercise_repository.save(exercise)
     exercise_repository.save_pushes_b(exercise)
 
-# workout_4_push_b = Workout(workout_4_push_b_list, user_1)
-
-# exercise_repository.transfer_exercises('pulls', 'Pull', 'B')
 
 exercise_24 = Exercise("Barbell Rows", 5, 5, 50, "Pull", 5, "B")
 exercise_25 = Exercise("Pulldowns", 3, 8, 65, "Pull", 5, "B")
@@ -94,18 +79,3 @@ for exercise in workout_5_pull_b_list:
     exercise_repository.save(exercise)
     exercise_repository.save_pulls_b(exercise)
 
-
-
-
-# push_a = push_a_repository.select_all()
-# pull_a = pull_a_repository.select_all()
-# legs = legs_repository.select_all()
-# push_b = push_b_repository.select_all()
-# pull_b = pull_b_repository.select_all()
-
-# workouts = [push_a, pull_a, legs, push_b, pull_b]
-
-
-
-
-# workout_repository.save(push_a.workout_)

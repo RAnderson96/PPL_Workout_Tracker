@@ -9,7 +9,10 @@ workout_blueprint = Blueprint("workout", __name__)
 
 # SHOW
 # GET '/books/<id>'
-# @workout_blueprint.route("/workout/<workout_num>", methods=['GET'])
+# @workout_blueprint.route("/workout/<loop.index>", methods=['GET'])
 # def show_workout(workout_num):
+
+
+
 #     workout = workout_repository.select(workout_num)
 #     return render_template('books/show.html', book = book)

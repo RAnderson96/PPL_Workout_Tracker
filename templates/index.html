@@ -9,12 +9,12 @@
         {% for row in workout %}
         <div>
             <ul>
-                <li>{{ row.exercise_name }} </li>
+                <li>{{ row.exercise_name }}</li>
             </ul>
         </div>
         {% endfor %}
 
-        <a href="/workout/{{workout_num}}"><i class="fa-solid fa-arrow-right fa-2xl" style="color:#F5B718"></i></a>
+        <a href="/workout/{{loop.index}}"><i class="fa-solid fa-arrow-right fa-2xl" style="color:#F5B718"></i></a>
 
     </div>
     <br>
@@ -22,43 +22,6 @@
 
     {% endfor %}
     </div>
-
-
-
-    <!-- {% for workout in all_workouts %}
-    <div class="workout">
-        
-        {% for row in workout %}
-        <div>
-            <ul>
-                <li>{{ row.exercise_name }} </li>
-            </ul>
-        </div>
-        {% endfor %}
-
-        <a href="/"><i class="fa-solid fa-calendar fa-2xl" style="color:#F5B718"></i></a>
-
-    </div>
-    <br>
-
-
-{% endfor %} -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 </main>
