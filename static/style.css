@@ -24,7 +24,7 @@ body {
 
 .wrapper .sidebar {
     position: fixed;
-    width: 100px;
+    width: 8%;
     height: 100%;
     background: #023020;
     
@@ -35,15 +35,57 @@ body {
 
 
 .wrapper .sidebar ul li {
-    padding: 30px;
+    display: flex;
+    justify-content: center;
+    
 
    
 }
 
 
 .wrapper .sidebar ul li a {
+    font-size: 30px;
     color: white;
     display: block;
-    padding-top: 3rem;
+    padding-top: 5rem;
+    text-align: center;
 
+}
+
+
+
+.main_content > * > * {
+    margin-left: 10%;
+}
+
+
+
+.workout {
+    text-align: left;
+    width: 70%;
+    /* height: max-content; */
+    margin-left: 10%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    padding: 20px;
+    border-style: solid;
+    border-color: #F5B718;
+    border-radius: 60px;
+    
+}
+
+.workout div ul {
+    margin-left: 40px;
+    font-size: 40px;
+}
+
+.main_content h1 {
+    font-size: 50px;
+}
+
+.workout a {
+    margin-top: 20px;
+    margin-left: 10%;
+    font-size: 40px;
 }
