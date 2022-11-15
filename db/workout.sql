@@ -1,12 +1,14 @@
-DROP TABLE IF EXISTS exercises;
-DROP TABLE IF EXISTS workouts;
-DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS exercises CASCADE;
+DROP TABLE IF EXISTS workouts CASCADE;
+DROP TABLE IF EXISTS users CASCADE;
+DROP TABLE IF EXISTS records CASCADE;
 -- DROP TABLE IF EXISTS records;
-DROP TABLE IF EXISTS legs;
-DROP TABLE IF EXISTS pushes_a;
-DROP TABLE IF EXISTS pushes_b;
-DROP TABLE IF EXISTS pulls_a;
-DROP TABLE IF EXISTS pulls_b;
+DROP TABLE IF EXISTS legs CASCADE;
+DROP TABLE IF EXISTS pushes_a CASCADE;
+DROP TABLE IF EXISTS pushes_b CASCADE;
+DROP TABLE IF EXISTS pulls_a CASCADE;
+DROP TABLE IF EXISTS pulls_b CASCADE;
+
 
 
 CREATE TABLE exercises (
@@ -98,13 +100,8 @@ CREATE TABLE workouts (
     workout_num INT
 );
 
-
-
--- class Workout:
---     def __init__(self, workout_name, workout, id = None):
-
---         self.workout_name = workout_name
---         self.workout = workout
---         self.id = id
-
-
+CREATE TABLE records (
+  id SERIAL PRIMARY KEY,
+  workout_dict TEXT[],
+  exercise_id INT NOT NULL REFERENCES exercises(id)
+);

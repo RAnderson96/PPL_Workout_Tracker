@@ -1,10 +1,7 @@
 from models.exercise import Exercise
 from models.user import User
 from models.workout import Workout_list
-# import repositories.exercise_repository as exercise_repository
-# import repositories.user_repository as user_repository
-# import repositories.workout_repository as workout_repository
-from repositories import exercise_repository, user_repository, workout_repository, pull_a_repository, pull_b_repository, push_a_repository, push_b_repository, legs_repository
+from repositories import exercise_repository, user_repository
 
 
 user_1 = User("Lorem", "Ipsum")

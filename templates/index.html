@@ -3,24 +3,29 @@
 <main class="main_content">
     <h1><b>Your Fitness Routine</b></h1>
     <div class="workout_loop">
-    {% for workout in all_workouts %}
-    <div class="workout">
-        
-        {% for row in workout %}
-        <div>
-            <ul>
-                <li>{{ row.exercise_name }}</li>
-            </ul>
+        {% for workout in all_workouts %}
+        <div class="clickable_workout">
+            <a href="/workouts/{{loop.index}}">
+                <div class="workout">
+
+                    {% for row in workout %}
+                    <div>
+                        <ul>
+                            <li>{{ row.exercise_name }}</li>
+                        </ul>
+                    </div>
+                    {% endfor %}
+                    <br>
+
+                    <!-- <a href="/workouts/{{loop.index}}"><i class="fa-solid fa-arrow-right fa-2xl" style="color:#F5B718"></i></a> -->
+
+                </div>
+            </a>
         </div>
+        <br>
+
+
         {% endfor %}
-
-        <a href="/workout/{{loop.index}}"><i class="fa-solid fa-arrow-right fa-2xl" style="color:#F5B718"></i></a>
-
-    </div>
-    <br>
-
-
-    {% endfor %}
     </div>
 
 
