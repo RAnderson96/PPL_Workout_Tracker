@@ -18,9 +18,14 @@ def show_workout(index):
     push_b = exercise_repository.select_specific_workout('Push', 4, 'B')
     pull_b = exercise_repository.select_specific_workout('Pull', 5, 'B')
     all_workouts = [push_a, pull_a, legs, push_b, pull_b]
+    workout=all_workouts[int(index)-1]
+    workout_sets = []
+    for exercise in workout:
+        workout_sets.append(exercise.num_sets)
+    
 
     
-    return render_template('workouts/index.html', workout=all_workouts[int(index)-1])
+    return render_template('workouts/index.html', workout = all_workouts[int(index)-1], workout_sets = workout_sets)
 
 
 

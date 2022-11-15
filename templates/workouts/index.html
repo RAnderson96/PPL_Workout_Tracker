@@ -2,8 +2,31 @@
 {% block content %}
 <main class="main_content">
     <h1><b>Your Workout</b></h1>
+    <div>
+        <h2>Workout</h2>
+
+        {% for row in workout %}
+        <div>
+            <ul>
+                <li>{{ row.exercise_name }}</li>
+                <li>
+                    {% for set in range(workout_sets[loop.index -1])%}
+                <li>
+                    <label for="reps">reps</label>
+                    <input type="number" id="reps" name="" value="{{row.num_reps}}" required>
+                </li>
+                <li>
+                    <label for="weight">weights</label>
+                    <input type="number" id="weight" name="weight" value="{{row.weights}}" required>
+
+                </li>
+                {% endfor %}
+                </li>
+            </ul>
+        </div>
+        {% endfor %}
 
 
 
 
-{% endblock %}
+        {% endblock %}
