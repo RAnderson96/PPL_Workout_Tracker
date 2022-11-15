@@ -1,11 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
 <main class="main_content">
-    <h1><b>Your Workout</b></h1>
+    <h1><b>Your Workout History</b></h1>
     
 
     <div>
-        <form action="/workouts/{{index}}/record" method="POST">
+        <!-- <form action="/workouts/{{index}}/record" method="POST"> -->
             {% for row in workout %}
             <div>
 
@@ -45,12 +45,12 @@
             {% endfor %}
 
         
-            <button class="submit_workout_button" type="submit"><i class="fa-solid fa-floppy-disk fa-3x" style="color:#F5B718"></i></i><br>Submit Workout</button>
+            <!-- <button class="submit_workout_button" type="submit"><i class="fa-solid fa-floppy-disk fa-3x" style="color:#F5B718"></i></i><br>Submit Workout</button>
         </form>
 
         <form class="edit_form" action="/workouts/{{index}}/edit">
             <button id="edit_button"><i class="fa-solid fa-pen-to-square fa-3x" style="color:gold" aria-hidden="true"></i><br>Edit Workout</button>
-        </form>
+        </form> -->
         
     </div>
         {% endblock %}

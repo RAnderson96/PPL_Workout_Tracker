@@ -27,7 +27,7 @@ body {
     position: fixed;
     width: 8%;
     height: 100%;
-    background: #023020;
+    background: #01503a;
     
    
 
@@ -45,7 +45,7 @@ body {
 
 
 .wrapper .sidebar ul li a {
-    font-size: 30px;
+    font-size: 24px;
     color: white;
     display: block;
     padding-top: 5rem;
@@ -82,13 +82,14 @@ body {
 }
 
 .main_content h1 {
-    font-size: 50px;
+    margin-top: 3%;
+    font-size: 40px;
 }
 
 .workout a {
     margin-top: 20px;
     margin-left: 10%;
-    font-size: 40px;
+    font-size: 30px;
 }
 
 
@@ -109,11 +110,11 @@ body {
 
 
 .workout_entries {
-    margin-left: 5%;
+    margin-left: 2%;
     margin-top: 20px;
     border-style: solid;
     border-color: #F5B718;
-    border-radius: 60px;
+    border-radius: 100px;
     width: max-content ;
     background-color: black;
     padding: 2rem;
@@ -126,24 +127,24 @@ body {
     flex-direction: row;
     margin: 15px;
     /* gap: %; */
-    row-gap: 5%;
+    row-gap: 3%;
     text-align: center;
     align-items:center;
 }
 
 div li input {
-    width: 4rem;
+    width: 100px;
     background-color: black;
     color: white;
     text-align: center;
     box-sizing: border-box;
     border-style: none;
-    font-size: 40px;
+    font-size: 24px;
 }
 
 
 .workout_key {
-    font-size: 40px;
+    font-size: 24px;
     font-style:normal;
 }
 
@@ -155,15 +156,6 @@ div li input {
 }
 
 
-.submit_workout_button {
-    margin-top: 5%;
-    margin-left: 2%;
-    margin-bottom: 10%;
-    background-color: black;
-    color: white;
-    font-size: 40px;
-    border-style: none;
-}
 
 
 
@@ -191,3 +183,45 @@ a:link {
     text-decoration: underline;
   }
  
+
+
+.edit_to_row {
+    display: flex;
+    flex-direction: row;
+    margin: 15px;
+    /* gap: %; */
+    row-gap: 5%;
+    text-align: center;
+    align-items:center;
+}
+
+
+
+
+#edit_button {
+    position: absolute;
+    top: 40px;
+    right: 40%;
+    
+    /* margin-top: 15px; */
+    /* margin-left: 2%; */
+    /* margin-bottom: 5%; */
+    background-color: black;
+    color: white;
+    font-size: 25px;
+    border-style: none;
+}
+
+.submit_workout_button {
+    margin-top: 5%;
+    margin-left: 2%;
+    margin-bottom: 10%;
+    background-color: black;
+    color: white;
+    font-size: 25px;
+    border-style: none;
+
+    /* position: absolute;
+    top: 60px;
+    left: 40%; */
+}

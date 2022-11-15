@@ -3,15 +3,20 @@
 <main class="main_content">
     <h1><b>Edit This Workout</b></h1>
 
-
     <div>
         <form action="/workouts/{{index}}" method="POST">
             {% for row in workout %}
-            <div>
+            <div class = "edit_to_row">
                 <!-- exercise_name, num_sets, num_reps, weights, workout_group, workout_num, workout_varient = "Normal" -->
                 <ul>
-                    <li class="edit_workout_exercise_name">{{loop.index}}. {{ row.exercise_name }}</li>
+                    <li class="workout_exercise_name">{{loop.index}}. {{ row.exercise_name }}</li>
                     <div class="buttons_row">
+                        <div class = "workout_key">
+                            <ul>
+                                <li>Sets</li>
+                                <li>Reps</li>
+                            </ul>
+                        </div>
 
 
                         <!-- <div class = "workout_key">
@@ -43,5 +48,8 @@
             {% endfor %}
 
 
-            <button class="submit_workout_button" type="submit"><i class="fa-solid fa-floppy-disk fa-3x" style="color:#F5B718"></i></i><br>Submit Edit</button>
+            <button class="edit_workout_button" type="submit"><i class="fa-solid fa-floppy-disk fa-3x" style="color:#F5B718"></i></i><br>Submit Edit</button>
         </form>
+
+
+        {% endblock %}

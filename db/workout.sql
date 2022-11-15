@@ -16,7 +16,7 @@ CREATE TABLE exercises (
   exercise_name VARCHAR(255),
   num_sets INT,
   num_reps INT,
-  weights INT,
+  weights FLOAT,
   workout_group VARCHAR(255),
   workout_num INT,
   workout_varient VARCHAR(255)
