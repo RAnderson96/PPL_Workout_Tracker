@@ -13,9 +13,8 @@ record_blueprint = Blueprint("history", __name__)
 
 def show_history():
     
- 
-
+    all_records = record_repository.select_all()
     
-    return render_template('/history/index.html')
+    return render_template('/history/index.html', all_records = all_records)
 
 #workout = all_workouts[int(index)-1], workout_sets = workout_sets, index=index

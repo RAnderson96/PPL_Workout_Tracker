@@ -2,55 +2,18 @@
 {% block content %}
 <main class="main_content">
     <h1><b>Your Workout History</b></h1>
-    
-
-    <div>
-        <!-- <form action="/workouts/{{index}}/record" method="POST"> -->
-            {% for row in workout %}
-            <div>
-
-                <ul>
-                    <li class="workout_exercise_name">{{loop.index}}. {{ row.exercise_name }}</li>
-                    <div class="buttons_row">
-                        <div class = "workout_key">
-                            <ul>
-                                <li>reps</li>
-                                <li>[kg]</li>
-                            </ul>
-                        </div>
+    <ul>
+    {% for row in all_records %}
+    <div class = "history_block">
+        <li>
+        {{row.id}}, {{row.workout_dict}}, {{row.exercise_id}}
+        </li>
 
 
-                        {% for set in range(row.num_sets) %}
-                        <div class="workout_entries">
-                            <li>
-                                <label for="reps"></label>
-                                <input type="number" id="reps" name="reps_{{row.id}}_{{set}}" value="{{row.num_reps}}"
-                                    required>
-                                <br>
-                            <!-- </li>
-                            <li> -->
-                                <label for="weight"></label>
-                                <input type="number" id="weights" name="weights_{{row.id}}_{{set}}" step="0.5"
-                                    value="{{row.weights}}" required>
 
-                            </li>
-                        </div>
 
-                        {% endfor %}
-                    </div>
 
-                    </li>
-                </ul>
-            </div>
-            {% endfor %}
-
-        
-            <!-- <button class="submit_workout_button" type="submit"><i class="fa-solid fa-floppy-disk fa-3x" style="color:#F5B718"></i></i><br>Submit Workout</button>
-        </form>
-
-        <form class="edit_form" action="/workouts/{{index}}/edit">
-            <button id="edit_button"><i class="fa-solid fa-pen-to-square fa-3x" style="color:gold" aria-hidden="true"></i><br>Edit Workout</button>
-        </form> -->
-        
     </div>
-        {% endblock %}
+    {% endfor %}
+    </ul>
+    {% endblock %}
