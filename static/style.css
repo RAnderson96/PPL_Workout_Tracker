@@ -230,3 +230,18 @@ a:link {
 
     margin-left: 12%;
 }
+
+
+#delete_button {
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    
+    /* margin-top: 15px; */
+    /* margin-left: 2%; */
+    /* margin-bottom: 5%; */
+    background-color: black;
+    color: white;
+    font-size: 25px;
+    border-style: none;
+}

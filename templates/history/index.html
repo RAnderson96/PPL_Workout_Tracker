@@ -10,9 +10,10 @@
             
 
             <li>
-               {{list_of_names[loop.index -1]}} {{row}}
+               {{list_of_names[loop.index -1]}} {{row}} 
+              
             </li>
-            
+          
 
 
 
@@ -20,4 +21,9 @@
         </div>
         {% endfor %}
     </ul>
+
+    <form class="delete-form" action="/history/delete" method="POST">
+        <button id="delete_button" class="trash-button"><i class="fa-solid fa-xmark fa-3x" style="color:gold" aria-hidden="true" background-colour="black"></i></button>
+    </form>
+
     {% endblock %}

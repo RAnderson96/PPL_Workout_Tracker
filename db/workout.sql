@@ -34,8 +34,9 @@ CREATE TABLE counters (
 CREATE TABLE records (
   id SERIAL PRIMARY KEY,
   workout_dict TEXT[],
-  exercise_id INT NOT NULL REFERENCES exercises(id)
-  
+  exercise_id INT NOT NULL REFERENCES exercises(id),
+  time_created TIMESTAMP DEFAULT NOW()
+
 );
 
 

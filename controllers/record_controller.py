@@ -43,3 +43,10 @@ def show_history():
     return render_template('/history/index.html', record_to_display=record_to_display, list_of_names=list_of_names)
 
 #workout = all_workouts[int(index)-1], workout_sets = workout_sets, index=index
+
+# DELETE ALL
+# DELETE ALL '/history/delete'
+@record_blueprint.route("/history/delete", methods=['POST'])
+def delete_all_records():
+    record_repository.delete_all()
+    return redirect('/history')
