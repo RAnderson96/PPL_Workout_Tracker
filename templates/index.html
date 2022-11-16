@@ -9,6 +9,13 @@
                 <div class="workout">
 
                     {% for row in workout %}
+                    {% if loop.index == 1 %}
+                    <div>
+                        <ul>
+                            <li><b>{{ row.workout_group }} {{row.workout_varient}}</b></li>
+                        </ul>
+                    </div>
+                    {% endif %}
                     <div>
                         <ul>
                             <li>{{ row.exercise_name }}</li>

@@ -2,8 +2,10 @@ from flask import Flask, render_template, request, redirect
 from flask import Blueprint
 from models.exercise import Exercise
 from models.record import Record
+from models.counter import Counter
 import repositories.exercise_repository as exercise_repository
 import repositories.record_repository as record_repository
+import repositories.counter_repository as counter_repository
 import pdb
 
 workout_blueprint = Blueprint("workout", __name__)
@@ -20,7 +22,7 @@ workout_blueprint = Blueprint("workout", __name__)
 def show_workout(index):
     push_a = exercise_repository.select_specific_workout('Push', 1, 'A')
     pull_a = exercise_repository.select_specific_workout('Pull', 2, 'A')
-    legs = exercise_repository.select_specific_workout('Legs', 3, 'Normal')
+    legs = exercise_repository.select_specific_workout('Legs', 3, '')
     push_b = exercise_repository.select_specific_workout('Push', 4, 'B')
     pull_b = exercise_repository.select_specific_workout('Pull', 5, 'B')
     all_workouts = [push_a, pull_a, legs, push_b, pull_b]
@@ -43,26 +45,34 @@ def show_workout(index):
 def record_workout(index):
     push_a = exercise_repository.select_specific_workout('Push', 1, 'A')
     pull_a = exercise_repository.select_specific_workout('Pull', 2, 'A')
-    legs = exercise_repository.select_specific_workout('Legs', 3, 'Normal')
+    legs = exercise_repository.select_specific_workout('Legs', 3, '')
     push_b = exercise_repository.select_specific_workout('Push', 4, 'B')
     pull_b = exercise_repository.select_specific_workout('Pull', 5, 'B')
     all_workouts = [push_a, pull_a, legs, push_b, pull_b]
     workout=all_workouts[int(index)-1]
-
+    
+    counter = Counter()
+    counter_repository.save(counter)
+    counter.workout_group_num +=1
+    counter_repository.update(counter)
     for exercise in workout:
         record = Record(exercise)
         record.workout_dict.clear()
+
+        # counter.exercise_id = exercise.id
+        counter_repository.save(counter)
+        
+        
         for set in range(exercise.num_sets):
-
-
             reps = request.form[f'reps_{exercise.id}_{set}']
-            weights = request.form[f'weights_{exercise.id}_{set}']
-        
+            weights = request.form[f'weights_{exercise.id}_{set}']      
             record.workout_dict.append([int(reps), float(weights)])
-
-        
+            
+    
+        # pdb.set_trace()
         record_repository.save(record)
-        
+    
+       
 
     return redirect('/')
 
@@ -72,7 +82,7 @@ def record_workout(index):
 def edit_workout(index):
     push_a = exercise_repository.select_specific_workout('Push', 1, 'A')
     pull_a = exercise_repository.select_specific_workout('Pull', 2, 'A')
-    legs = exercise_repository.select_specific_workout('Legs', 3, 'Normal')
+    legs = exercise_repository.select_specific_workout('Legs', 3, '')
     push_b = exercise_repository.select_specific_workout('Push', 4, 'B')
     pull_b = exercise_repository.select_specific_workout('Pull', 5, 'B')
     all_workouts = [push_a, pull_a, legs, push_b, pull_b]
@@ -85,17 +95,17 @@ def edit_workout(index):
 def update_workout(index):
     push_a = exercise_repository.select_specific_workout('Push', 1, 'A')
     pull_a = exercise_repository.select_specific_workout('Pull', 2, 'A')
-    legs = exercise_repository.select_specific_workout('Legs', 3, 'Normal')
+    legs = exercise_repository.select_specific_workout('Legs', 3, '')
     push_b = exercise_repository.select_specific_workout('Push', 4, 'B')
     pull_b = exercise_repository.select_specific_workout('Pull', 5, 'B')
     all_workouts = [push_a, pull_a, legs, push_b, pull_b]
     workout=all_workouts[int(index)-1]
     for exercise in workout:
-        num_sets = request.form[f'num_sets_{exercise.id}']
-        num_reps = request.form[f'num_reps_{exercise.id}']
-        
-        exercise_update = Exercise(exercise.exercise_name, num_sets, num_reps, exercise.weights, exercise.workout_group, exercise.workout_num, exercise.workout_varient)
+        num_sets = int(request.form[f'num_sets_{(exercise.id)}'])
+        num_reps = int(request.form[f'num_reps_{(exercise.id)}'])
+        exercise_update = Exercise(exercise.exercise_name, num_sets, num_reps, exercise.weights, exercise.workout_group, exercise.workout_num, exercise.workout_varient, exercise.id)
+
         exercise_repository.update(exercise_update)
-        pdb.set_trace()
+        
     return redirect('/')
 

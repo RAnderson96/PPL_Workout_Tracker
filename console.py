@@ -1,6 +1,7 @@
 from models.exercise import Exercise
 from models.user import User
 from models.workout import Workout_list
+from models.counter import Counter
 from repositories import exercise_repository, user_repository
 
 
@@ -34,11 +35,11 @@ for exercise in workout_2_pull_a_list:
     exercise_repository.save(exercise)
 
 
-exercise_13 = Exercise("Squats", 5, 5, 65, "Legs", 3)
-exercise_14 = Exercise("Romanian Deadlift", 3, 8, 70, "Legs", 3)
-exercise_15 = Exercise("Leg Press", 3, 8, 100, "Legs", 3)
-exercise_16 = Exercise("Leg Curls", 5, 5, 60, "Legs", 3)
-exercise_17 = Exercise("Calf Raises", 5, 5, 70, "Legs", 3)
+exercise_13 = Exercise("Squats", 5, 5, 65, "Legs", 3, '')
+exercise_14 = Exercise("Romanian Deadlift", 3, 8, 70, "Legs", 3, '')
+exercise_15 = Exercise("Leg Press", 3, 8, 100, "Legs", 3, '')
+exercise_16 = Exercise("Leg Curls", 5, 5, 60, "Legs", 3, '')
+exercise_17 = Exercise("Calf Raises", 5, 5, 70, "Legs", 3, '')
 
 
 workout_3_legs_list = [exercise_13, exercise_14, exercise_15, exercise_16, exercise_17]
@@ -70,4 +71,3 @@ workout_5_pull_b_list = [exercise_24, exercise_25, exercise_26, exercise_27, exe
 
 for exercise in workout_5_pull_b_list:
     exercise_repository.save(exercise)
-

@@ -3,17 +3,21 @@
 <main class="main_content">
     <h1><b>Your Workout History</b></h1>
     <ul>
-    {% for row in all_records %}
-    <div class = "history_block">
-        <li>
-        {{row.id}}, {{row.workout_dict}}, {{row.exercise_id}}
-        </li>
+        {% for row in record_to_display %}
+        
+        <div class="history_block">
+
+            
+
+            <li>
+               {{list_of_names[loop.index -1]}} {{row}}
+            </li>
+            
 
 
 
 
-
-    </div>
-    {% endfor %}
+        </div>
+        {% endfor %}
     </ul>
     {% endblock %}

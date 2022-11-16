@@ -22,10 +22,26 @@ def select_all():
     results = run_sql(sql)
 
     for row in results:
-        exercise = exercise_repository.select(row['exercise_id'])
-        record = Record(row['workout_dict'], exercise)
+        # exercise = exercise_repository.select(row['exercise_id'])
+        record = Record(row['workout_dict'], row['exercise_id'], row['id'])
         records.append(record)
     return records
+
+
+def select_exercise_reps():
+    records_reps = []
+
+    sql = "SELECT workout_dict, exercise_id FROM records"
+    results = run_sql(sql)
+
+    for row in results:
+        exercise = exercise_repository.select(row['exercise_id'])
+        
+        # records_reps.append({exercise.id: row['workout_dict']})
+        records_reps.append(row)
+    
+    return records_reps
+
 
 
 

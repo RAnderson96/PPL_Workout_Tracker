@@ -174,7 +174,7 @@ a:link {
   a:hover {
     color: rgb(0, 170, 142);
     background-color: transparent;
-    text-decoration: underline;
+    
   }
   
   a:active {

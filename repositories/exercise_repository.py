@@ -46,9 +46,14 @@ def select_specific_workout_num(workout_group, workout_varient):
 
    
 def update(exercise):
-    sql = "UPDATE exercises SET (num_sets, num_reps) = (%s, %s) WHERE id = %s"
-    values = [exercise.num_sets, exercise.num_reps, exercise.id]
-    run_sql(sql, values) 
+    sql = "UPDATE exercises SET (exercise_name, num_sets, num_reps, weights, workout_group, workout_num, workout_varient) = (%s, %s, %s, %s, %s, %s, %s) WHERE id = %s"
+    values = [exercise.exercise_name, exercise.num_sets, exercise.num_reps, exercise.weights, exercise.workout_group, exercise.workout_num, exercise.workout_varient, exercise.id]
+  
+    # sql = "UPDATE exercises SET (exercise_name, num_sets, num_reps, weights, workout_group, workout_num, workout_varient) VALUES (%s, %s, %s, %s, %s, %s, %s) WHERE id = %s"
+    # values = [exercise.exercise_name, exercise.num_sets, exercise.num_reps, exercise.weights, exercise.workout_group, exercise.workout_num, exercise.workout_varient, exercise.id]
+    # values = [exercise.num_sets, exercise.num_reps, exercise.id]
+    result = run_sql(sql, values) 
+    
 
     
 
