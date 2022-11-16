@@ -11,10 +11,12 @@ app = Flask(__name__)
 
 from controllers.workout_controller import workout_blueprint
 from controllers.record_controller import record_blueprint
+from controllers.user_controller import user_blueprint
 
 
 app.register_blueprint(workout_blueprint)
 app.register_blueprint(record_blueprint)
+app.register_blueprint(user_blueprint)
 
 
 @app.route('/')

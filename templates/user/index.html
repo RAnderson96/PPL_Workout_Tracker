@@ -1,0 +1,16 @@
+
+{% extends "base.html" %}
+{% block content %}
+<main class="main_content">
+    <h1><b>Your Profile</b></h1>
+    <div class="workout_loop">
+        {% for val in user %}
+        <div class="clickable_workout">
+                <div class="workout">
+                  <h2>Hello {{val.first_name}} {{val.last_name}} </h2>
+        
+                  </div>
+        </div>
+        {% endfor %}
+
+    {% endblock %}
