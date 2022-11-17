@@ -7,7 +7,6 @@
         <form action="/workouts/{{index}}" method="POST">
             {% for row in workout %}
             <div class = "edit_to_row">
-                <!-- exercise_name, num_sets, num_reps, weights, workout_group, workout_num, workout_varient = "Normal" -->
                 <ul>
                     <li class="workout_exercise_name">{{loop.index}}. {{ row.exercise_name }}</li>
                     <div class="buttons_row">
@@ -18,22 +17,15 @@
                             </ul>
                         </div>
 
-
-                        <!-- <div class = "workout_key">
-                            <ul>
-                                <li>reps</li>
-                                <li>[kg]</li>
-                            </ul>
-                        </div> -->
                         <div class="workout_entries">
                             <li>
                                 <label for="num_sets"></label>
-                                <input type="number" id="num_sets" name="num_sets_{{row.id}}" value="{{row.num_sets}}" max="10"
+                                <input type="number" id="num_sets_edit" name="num_sets_{{row.id}}" value="{{row.num_sets}}" max="10"
                                     required>
                             </li>
                             <li>
                                 <label for="num_reps"></label>
-                                <input type="number" id="num_reps" name="num_reps_{{row.id}}" value="{{row.num_reps}}" required>
+                                <input type="number" id="num_reps_edit" name="num_reps_{{row.id}}" value="{{row.num_reps}}" required>
 
                             </li>
             

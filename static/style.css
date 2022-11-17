@@ -286,9 +286,9 @@ header {
 .new_workout_entries {
     /* margin-left: 2%; */
     margin-top: 20px;
-    border-style: solid;
-    border-color: #F5B718;
-    border-radius: 100px;
+    /* border-style: solid; */
+    /* border-color: #F5B718; */
+    /* border-radius: 100px; */
     width: max-content ;
     background-color: black;
     padding: 2rem;
@@ -302,15 +302,41 @@ header {
 }
 
 .new_submit_workout_button {
-    margin-top: 5%;
-    margin-left: 2%;
-    margin-bottom: 10%;
+    margin-top: 20px;
+    margin-left: 5%;
+    
     background-color: black;
     color: white;
     font-size: 25px;
     border-style: none;
-    order:4;
-    /* position: absolute;
-    top: 60px;
-    left: 40%; */
+    
+
+    
+}
+
+
+
+.new_workout_entries li div {
+    font-size: 20px;
+}
+
+
+.new_workout_entries li div input {
+    font-size: 20px;
+    /* width: 5rem; */
+
+}
+
+
+
+#num_sets {
+    width: 5rem;
+}
+
+#num_reps {
+    width: 5rem;
+}
+
+#weights {
+    width: 5rem;
 }
