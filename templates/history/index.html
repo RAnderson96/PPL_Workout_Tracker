@@ -2,6 +2,15 @@
 {% block content %}
 <main class="main_content">
     <h1><b>Your Workout History</b></h1>
+
+    <header>
+        <form class="delete-form" action="/history/delete" method="POST">
+            <button id="delete_button" class="trash-button"><i class="fa-solid fa-xmark fa-3x" style="color:gold" aria-hidden="true" background-colour="black"></i></button>
+        </form>
+
+    </header>
+
+
     <ul>
         {% for row in record_to_display %}
         
@@ -9,8 +18,8 @@
 
             
 
-            <li>
-               {{list_of_names[loop.index -1]}} {{row}} 
+            <li id="records_history">
+               {{list_of_names[loop.index -1]}} <br> Set , kg : {{row}} 
               
             </li>
           
@@ -22,9 +31,6 @@
         {% endfor %}
     </ul>
 
-    <form class="delete-form" action="/history/delete" method="POST">
-        <button id="delete_button" class="trash-button"><i class="fa-solid fa-xmark fa-3x" style="color:gold" aria-hidden="true" background-colour="black"></i></button>
-    </form>
 
     {% endblock %}
 

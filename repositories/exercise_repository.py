@@ -44,7 +44,24 @@ def select_specific_workout_num(workout_group, workout_varient):
     results = run_sql(sql, values)
     return results[0]['min']
 
-   
+
+def select_workout_varient(workout_group):
+    
+    sql = "SELECT DISTINCT workout_varient FROM exercises WHERE workout_group = %s"
+    values = [workout_group]
+    results = run_sql(sql, values)
+    # pdb.set_trace
+    return results[0]['workout_varient']
+
+def select_workout_by_group(workout_num):
+    
+    sql = "SELECT DISTINCT workout_group FROM exercises WHERE workout_num = %s"
+    values = [workout_num]
+    results = run_sql(sql, values)
+    # pdb.set_trace
+    return results[0]['workout_group']
+
+
 def update(exercise):
     sql = "UPDATE exercises SET (exercise_name, num_sets, num_reps, weights, workout_group, workout_num, workout_varient) = (%s, %s, %s, %s, %s, %s, %s) WHERE id = %s"
     values = [exercise.exercise_name, exercise.num_sets, exercise.num_reps, exercise.weights, exercise.workout_group, exercise.workout_num, exercise.workout_varient, exercise.id]

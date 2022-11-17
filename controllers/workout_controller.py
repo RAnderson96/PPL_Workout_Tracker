@@ -15,8 +15,7 @@ workout_blueprint = Blueprint("workout", __name__)
 
 
 
-# SHOW
-# GET '/books/<id>'
+#
 @workout_blueprint.route("/workouts/<index>", methods=['GET'])
 
 def show_workout(index):
@@ -109,3 +108,46 @@ def update_workout(index):
         
     return redirect('/')
 
+
+
+# NEW
+@workout_blueprint.route("/workouts/<index>/exercise/new", methods =['GET'])
+def new_exercise(index):
+    # push_a = exercise_repository.select_specific_workout('Push', 1, 'A')
+    # pull_a = exercise_repository.select_specific_workout('Pull', 2, 'A')
+    # legs = exercise_repository.select_specific_workout('Legs', 3, '')
+    # push_b = exercise_repository.select_specific_workout('Push', 4, 'B')
+    # pull_b = exercise_repository.select_specific_workout('Pull', 5, 'B')
+    # all_workouts = [push_a, pull_a, legs, push_b, pull_b]
+    # workout=all_workouts[int(index)-1]
+    # workout_group = exercise_repository.select_workout_by_group(index)
+    # workout_varient = exercise_repository.select_workout_varient(workout_group)
+
+    return render_template("/workouts/new.html", index=index)
+
+
+# CREATE
+@workout_blueprint.route("/workouts/<index>/exercise/", methods=["POST"])
+def create_exercise(index):
+    push_a = exercise_repository.select_specific_workout('Push', 1, 'A')
+    pull_a = exercise_repository.select_specific_workout('Pull', 2, 'A')
+    legs = exercise_repository.select_specific_workout('Legs', 3, '')
+    push_b = exercise_repository.select_specific_workout('Push', 4, 'B')
+    pull_b = exercise_repository.select_specific_workout('Pull', 5, 'B')
+    all_workouts = [push_a, pull_a, legs, push_b, pull_b]
+    workout=all_workouts[int(index)-1]
+
+    workout_group = exercise_repository.select_workout_by_group(index)
+    workout_varient = exercise_repository.select_workout_varient(workout_group)
+    
+    new_exercise_name = request.form["exercise_name"]
+    new_num_sets = int(request.form["num_sets"])
+    new_num_reps = int(request.form["num_reps"])
+    new_weights = float(request.form["weights"])
+    # new_workout_group = request.form["workout_group"]
+    # new_workout_varient = request.form["workout_varient"]
+    new_workout_num = int(float(index))
+    new_exercise = Exercise(new_exercise_name, new_num_sets, new_num_reps, new_weights, workout_group, new_workout_num, workout_varient)
+   
+    exercise_repository.save(new_exercise)
+    return redirect("/")

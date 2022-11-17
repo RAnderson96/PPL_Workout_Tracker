@@ -199,9 +199,9 @@ a:link {
 
 
 #edit_button {
-    position: absolute;
+    /* position: absolute;
     top: 40px;
-    right: 40%;
+    right: 40%; */
     
     /* margin-top: 15px; */
     /* margin-left: 2%; */
@@ -220,7 +220,7 @@ a:link {
     color: white;
     font-size: 25px;
     border-style: none;
-
+    order:4;
     /* position: absolute;
     top: 60px;
     left: 40%; */
@@ -233,15 +233,84 @@ a:link {
 
 
 #delete_button {
-    position: absolute;
+    /* position: absolute;
     top: 10%;
-    right: 10%;
+    right: 10%; */
     
     /* margin-top: 15px; */
     /* margin-left: 2%; */
     /* margin-bottom: 5%; */
+    display: flex;
+    /* justify-content:; */
+    align-items:flex-end;
     background-color: black;
     color: white;
     font-size: 25px;
     border-style: none;
+}
+
+
+#records_history {
+    margin-left: 2%;
+    margin-top: 20px;
+    border-style: solid;
+    border-color: #F5B718;
+    border-radius: 100px;
+    width: max-content ;
+    background-color: black;
+    padding: 2rem;
+
+
+
+}
+
+
+
+#new_button {
+    background-color: black;
+    color: white;
+    font-size: 25px;
+    border-style: none;
+
+
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    padding-top: 20px;
+    
+}
+
+
+.new_workout_entries {
+    /* margin-left: 2%; */
+    margin-top: 20px;
+    border-style: solid;
+    border-color: #F5B718;
+    border-radius: 100px;
+    width: max-content ;
+    background-color: black;
+    padding: 2rem;
+}
+
+.new_workout_entries > li {
+    /* margin-left: 2%; */
+    width:max-content;
+    padding-top: 10px;
+
+}
+
+.new_submit_workout_button {
+    margin-top: 5%;
+    margin-left: 2%;
+    margin-bottom: 10%;
+    background-color: black;
+    color: white;
+    font-size: 25px;
+    border-style: none;
+    order:4;
+    /* position: absolute;
+    top: 60px;
+    left: 40%; */
 }
