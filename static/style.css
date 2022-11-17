@@ -279,6 +279,7 @@ header {
     display: flex;
     flex-direction: row;
     padding-top: 20px;
+    padding-left: 5%;
     
 }
 
@@ -340,3 +341,5 @@ header {
 #weights {
     width: 5rem;
 }
+
+
