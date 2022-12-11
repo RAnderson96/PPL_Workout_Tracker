@@ -18,18 +18,18 @@
         <form action="/workouts/{{index}}/record" method="POST" id="workout-submit-form1">
             {% for row in workout %}
             <div>
-                
-                <ul>
-                    <li class="workout_exercise_name">{{loop.index}}. {{ row.exercise_name }}</li>
-                    <div class="buttons_row">
-                        <div class = "workout_key">
-                            <ul>
-                                <li>reps</li>
-                                <li>[kg]</li>
-                            </ul>
-                        </div>
-
-
+                <li class="workout_exercise_name">{{loop.index}}. {{ row.exercise_name }}</li>
+                <div class="buttons_row">
+                    
+                    
+                    
+                    <div class = "workout_key">
+                        <ul>
+                            <li>reps</li>
+                            <li>[kg]</li>
+                        </ul>
+                    </div>
+                    <ul class="exercise_row_flex">
                         {% for set in range(row.num_sets) %}
                         <div class="workout_entries">
                             <li>
