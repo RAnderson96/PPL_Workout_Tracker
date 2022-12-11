@@ -9,4 +9,3 @@ class Exercise:
         self.workout_varient = workout_varient
         self.id = id
 
-

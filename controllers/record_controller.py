@@ -20,6 +20,7 @@ def show_history():
     record_to_display = []
     for record in all_records:
         record_to_display.append(record[0])
+    print(record_to_display)
         
 
     # all_exercises = []

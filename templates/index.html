@@ -1,11 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
 <main class="main_content">
-    <h1><b>Your Fitness Routine</b></h1>
+    <h1>Your Fitness Routine</h1>
     <div class="workout_loop">
         {% for workout in all_workouts %}
-        <div class="clickable_workout">
-            <a href="/workouts/{{loop.index}}">
+        <div>
+            <a class="clickable_workout" href="/workouts/{{loop.index}}">
                 <div class="workout">
 
                     {% for row in workout %}
