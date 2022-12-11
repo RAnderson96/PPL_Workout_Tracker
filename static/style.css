@@ -7,6 +7,9 @@
     margin-bottom: 90px;
 }
 
+.main_content {
+    margin-bottom: 90px;
+}
 .main_content > h1 {
     text-align: center;
     font-weight: bold;
@@ -144,6 +147,17 @@ body {
     background-color: black;
     padding: 10px;
 }
+.workout_entries1 {
+    display:flex;
+    flex-direction: column;
+    margin-left: 2%;
+    margin-top: 10px;
+    border-style: solid;
+    border-color: #F5B718;
+    border-radius: 100px;
+    background-color: black;
+    padding: 10px;
+}
 
 
 
@@ -164,9 +178,35 @@ body {
     flex-direction: column;
     align-items: center;
 }
+
+.workout_entries1 > li  {
+    width: 30px;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+}
 #weights_wo {
     width: 30px;
 }
+
+#num_sets_edit {
+    font-size: 16px;
+    width: 30px;
+    background-color: black;
+    border: none;
+    color: white;
+    text-align: center;
+}
+
+#num_reps_edit {
+    font-size: 16px;
+    width: 30px;
+    background-color: black;
+    border: none;
+    color: white;
+    text-align: center;
+}
+
 .workout_entries > li > input {
     background-color: black;
     color: white;
@@ -200,7 +240,7 @@ body {
 
 
 .submit_workout_button {
-    background-color: black;
+    background-color: transparent;
     color: white;
     font-size: 12px;
     border-style: none;
@@ -208,7 +248,13 @@ body {
 }
 
 
-
+.edit_workout_button {
+    background-color: transparent;
+    color: white;
+    font-size: 12px;
+    border-style: none;
+    padding-left: 20px;  
+}
 
 
 a:link {
