@@ -1,8 +1,7 @@
-
-
-.workout_loop{
+.workout_loop {
     margin-bottom: 90px;
 }
+
 #workout-submit-form1 {
     margin-bottom: 90px;
 }
@@ -10,7 +9,8 @@
 .main_content {
     margin-bottom: 90px;
 }
-.main_content > h1 {
+
+.main_content>h1 {
     text-align: center;
     font-weight: bold;
     font-size: 30px;
@@ -18,7 +18,7 @@
 }
 
 .nav-elements-parent {
-    width:100%;
+    width: 100%;
     height: max-content;
     display: flex;
     flex-direction: row;
@@ -27,7 +27,7 @@
     align-self: flex-end;
 }
 
-.nav-elements-parent > li {
+.nav-elements-parent>li {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -37,7 +37,7 @@
 
 }
 
-.nav-elements-parent > li > a {
+.nav-elements-parent>li>a {
     text-decoration: none;
     color: white;
 }
@@ -63,14 +63,14 @@
 body {
     background-color: black;
     color: white;
-    
-    
+
+
 
 }
 
 
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -89,7 +89,7 @@ body {
     padding: 5px;
     border: 1px solid #F5B718;
     border-radius: 60px;
-    
+
 }
 
 .workout div ul {
@@ -128,6 +128,7 @@ body {
     font-size: 12px;
     border-style: none;
 }
+
 #new_button {
     background-color: black;
     color: white;
@@ -138,7 +139,7 @@ body {
 
 
 .workout_entries {
-    display:flex;
+    display: flex;
     margin-left: 2%;
     margin-top: 10px;
     border-style: solid;
@@ -147,8 +148,9 @@ body {
     background-color: black;
     padding: 10px;
 }
+
 .workout_entries1 {
-    display:flex;
+    display: flex;
     flex-direction: column;
     margin-left: 2%;
     margin-top: 10px;
@@ -172,19 +174,21 @@ body {
 }
 
 
-.workout_entries > li  {
+.workout_entries>li {
     width: 30px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
 }
 
-.workout_entries1 > li  {
+.workout_entries1>li {
     width: 30px;
     display: flex;
     flex-direction: column;
     align-self: center;
 }
+
 #weights_wo {
     width: 30px;
 }
@@ -207,7 +211,7 @@ body {
     text-align: center;
 }
 
-.workout_entries > li > input {
+.workout_entries>li>input {
     background-color: black;
     color: white;
     text-align: center;
@@ -217,7 +221,7 @@ body {
     width: 30px;
 }
 
-.exercise_row_flex{
+.exercise_row_flex {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -225,6 +229,7 @@ body {
     width: 85%;
 
 }
+
 .workout_key {
     margin-top: 15px;
     font-size: 16px;
@@ -253,7 +258,7 @@ body {
     color: white;
     font-size: 12px;
     border-style: none;
-    padding-left: 20px;  
+    padding-left: 20px;
 }
 
 
@@ -261,25 +266,25 @@ a:link {
     color: white;
     background-color: transparent;
     text-decoration: none;
-  }
+}
 
 
 
 
 .new_workout_entries {
     margin-top: 20px;
-    width: max-content ;
+    width: max-content;
     background-color: black;
     padding: 10px;
     margin-left: 10px;
     border: 1px solid #F5B718;
     border-radius: 20px;
-    
+
 }
 
-.new_workout_entries > li {
+.new_workout_entries>li {
     /* margin-left: 2%; */
-    width:max-content;
+    width: max-content;
     padding-top: 10px;
 
 }
@@ -287,14 +292,14 @@ a:link {
 .new_submit_workout_button {
     margin-top: 20px;
     margin-left: 5%;
-    
+
     background-color: black;
     color: white;
     font-size: 16px;
     border-style: none;
-    
 
-    
+
+
 }
 
 
@@ -324,4 +329,59 @@ a:link {
 
 #weights {
     width: 5rem;
+}
+
+
+@media screen and (min-width: 700px) {
+
+    .nav-elements-parent {
+        height: 100%;
+        width: 78px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        margin-bottom: auto;
+        align-self: flex-end;
+    }
+    
+    .nav-elements-parent>li {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex-direction: column;
+        padding: 15px;
+        margin: 0;
+    
+    }
+    
+    .nav-elements-parent>li>a {
+        text-decoration: none;
+        color: white;
+    }
+    
+    .sidebar2 {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    
+    }
+    
+    
+    
+    .sidebar {
+        display: block;
+        overflow: hidden;
+        position: fixed;
+        left: 0%;
+        height: 100% ;
+        background: #167A41;
+        width: 78px;
+    }
+
+    .main_content {
+        margin-left: 78px;
+        width: auto;
+    }
+    
+
 }
