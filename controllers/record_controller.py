@@ -18,8 +18,14 @@ def show_history():
     
     all_records = record_repository.select_exercise_reps()
     record_to_display = []
+    record_of_sets = []
     for record in all_records:
+        print(record)
         record_to_display.append(record[0])
+    for set in record_to_display:
+        print("this is the set loop")
+        print(set)
+
     print(record_to_display)
         
 

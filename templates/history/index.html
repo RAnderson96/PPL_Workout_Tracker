@@ -10,18 +10,22 @@
 
     </header>
 
-
-    <ul>
+    <table>
+        <tr>
+            <th>Exercise</th>
+            <th>Set, kg</th>
+        </tr>
         {% for row in record_to_display %}
         
         <div class="history_block">
+        <tr>
+            <td>{{list_of_names[loop.index -1]}}</td>
+            <td>{{row[0]}}</td>
+        </tr>
 
             
 
-            <li id="records_history">
-               {{list_of_names[loop.index -1]}} <br> Set , kg : {{row}} 
-              
-            </li>
+         
           
 
 
@@ -30,6 +34,10 @@
         </div>
         {% endfor %}
     </ul>
+
+
+    </table>
+
 
 
     {% endblock %}
